@@ -57,11 +57,13 @@ section {
   border-radius: 6px;
   padding: 6px 14px;
   width: 90%;
-  animation: found 1s 1 linear;
+}
+.animate {
+  animation: found 0.4s 1;
 }
 @keyframes found {
   0% {
-    transform: translateX(600px);
+    transform: translateX(400px);
   }
   100% {
     transform: translateX(0);

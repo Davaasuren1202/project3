@@ -36,6 +36,11 @@
           newDiv.textContent = todos[i];
           newDiv.classList.add("todo");
           container.appendChild(newDiv);
+
+          if (i === todos.length - 1) {
+            console.log("dbwabhdsds");
+            newDiv.classList.add("animate");
+          }
         }
       };
     </script>
