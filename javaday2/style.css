@@ -1,0 +1,12 @@
+.hp {
+  width: 80%;
+  margin: 90px auto;
+  background-color: rgb(208, 70, 70);
+  height: 100px;
+  display: flex;
+}
+.fullhp {
+  width: 10%;
+  height: 100%;
+  background-color: rgb(91, 226, 91);
+}

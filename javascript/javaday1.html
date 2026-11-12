@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script>
+      //   let name = prompt("What is your name?");
+      //  alert("Close the door " + name + "!");
+
+      //   let a = Number(prompt("A too oruulna uu!"));
+      //   let b = prompt("B too oruulna uu!");
+      //   let sum = a * b;
+
+      //   alert("a * b = " + sum);
+      //   let year = Number(prompt("Ta heden ond tursun be?"));
+      //   let age = 2026 - year;
+      //   alert("Ta odoo " + age + " nastai.");
+
+      let products = prompt("Барааны нэрээ оруулна уу?");
+      let price = Number(prompt("Ширхэгийн үнийг оруулна уу?"));
+      let quantity = Number(prompt("Хэдэн ширхэг авах вэ?"));
+      let discountrate = Number(
+        prompt("Хөнгөлөлтийн хувь хэмжээг оруулна уу?"),
+      );
+      discountrate = discountrate * 0.01;
+      let total = price * quantity;
+      let discount = total * discountrate;
+      let finaltotal = total - discount;
+
+      alert(
+        `Бараа: ${products}\nНэгж үнэ: ${price}төг\nШирхэг: ${quantity}ш\nХөнгөлөлтийн хувь: ${discountrate}%\nНийт үнэ: ${total}төг\nХөнгөлөлт: ${discount}төг\nТөлөх дунд: ${finaltotal}төг`,
+      );
+
+      //   let getmin = Number(prompt("Minut oruulna uu!"));
+      //   let min = getmin % 60;
+      //   let hour = (getmin - min) / 60;
+
+      //   alert(hour + "цаг " + min + "минут");
+    </script>
+  </body>
+</html>

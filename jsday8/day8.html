@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Todo List</h1>
+      <div class="search">
+        <input type="text" placeholder="save your text...." id="input" />
+        <button id="button" class="button is-success" onclick="addTodo()">
+          Add
+        </button>
+      </div>
+      <div id="container"></div>
+    </section>
+    <script>
+      const todos = [];
+
+      const input = document.getElementById("input");
+      const container = document.getElementById("container");
+
+      const addTodo = () => {
+        todos.push(input.value);
+        renderTodo();
+      };
+
+      const renderTodo = () => {
+        container.textContent = "";
+
+        for (i = 0; i < todos.length; i++) {
+          const newDiv = document.createElement("div");
+          newDiv.textContent = todos[i];
+          newDiv.classList.add("todo");
+          container.appendChild(newDiv);
+        }
+      };
+    </script>
+  </body>
+</html>

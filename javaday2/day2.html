@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Hello World</h1>
+        <p class="subtitle">My first website with <strong>Bulma</strong>!</p>
+      </div>
+      <button onclick="red()" class="button is-primary">Plus me</button>
+      <button onclick="white()" class="button is-link">Minus me</button>
+      <button onclick="pink()" class="button is-danger">Multiply me</button>
+      <button onclick="changeText()" class="button is-info">changeText</button>
+      <button onclick="toog()" class="button is-warning">tap here</button>
+      <h1 id="title">hello world</h1>
+      <h1 id="zero">garaas ugsun toog 2t urjuuleh</h1>
+    </section>
+
+    <section>
+      <h1>hp = <span id="fupp">100</span></h1>
+      <div id="recover" class="hp">
+        <div id="1" class="fullhp"></div>
+        <div id="2" class="fullhp"></div>
+        <div id="3" class="fullhp"></div>
+        <div id="4" class="fullhp"></div>
+        <div id="5" class="fullhp"></div>
+        <div id="6" class="fullhp"></div>
+        <div id="7" class="fullhp"></div>
+        <div id="8" class="fullhp"></div>
+        <div id="9" class="fullhp"></div>
+        <div id="10" class="fullhp"></div>
+      </div>
+      <button onclick="attack()" class="button is-danger">Attack</button>
+      <button onclick="heal()" class="button is-success">Heal</button>
+    </section>
+
+    <script>
+      // let too = 0;
+
+      // const toog = () => {
+      //   too = too + 1;
+      //   console.log(too);
+      // };
+      // homework
+
+      let health = 10;
+
+      const attack = () => {
+        let damageBar = document.getElementById(health);
+        health = health - 1;
+
+        damageBar.classList.remove("fullhp");
+      };
+
+      const heal = () => {
+        let healthBar = document.getElementById(health);
+        health = health + 1;
+
+        healthBar.classList.add("fullhp");
+      };
+
+      //   const addNumber = () => {
+      //     a = prompt("Enter a name");
+      //     b = Number(prompt("Enter a age"));
+      //     console.log(a + " is " + b + " years old");
+      //   };
+
+      //   let number = 0;
+      //   const red = () => {
+      //     let first = Number(prompt("Enter a first number"));
+      //     let second = Number(prompt("Enter a second number"));
+      //     number = first + second;
+      //     alert(first + " + " + second + " = " + number);
+      //   };
+      //   const white = () => {
+      //     let first = Number(prompt("Enter a first number"));
+      //     let second = Number(prompt("Enter a second number"));
+      //     number = first - second;
+      //     console.log(first + " - " + second + " = " + number);
+      //   };
+      //   const pink = () => {
+      //     let first = Number(prompt("Enter a first number"));
+      //     let second = Number(prompt("Enter a second number"));
+      //     number = first * second;
+      //     console.log(first + " * " + second + " = " + number);
+      //   };
+
+      let number = 0;
+      const red = () => {
+        let first = Number(prompt("Enter a first number"));
+        let second = 3;
+        number = first % second;
+        num = first / second;
+        overnum = num - number;
+        if (number === 0) {
+          alert(
+            first +
+              " + " +
+              second +
+              " = " +
+              overnum +
+              "\n" +
+              first +
+              " is divisible by " +
+              second,
+          );
+        } else {
+          alert(
+            first +
+              " + " +
+              second +
+              " = " +
+              num +
+              "\n" +
+              first +
+              " is not divisible by " +
+              second,
+          );
+        }
+      };
+      const garchig = document.getElementById("title");
+
+      const changeText = () => {
+        garchig.classList.add("gg");
+      };
+      //   garchig.textContent = "Hello Pinecone";
+
+      // const one = document.getElementById("zero");
+      // let count = Number(prompt("Enter a number"));
+
+      // const two = () => {
+      //   count = (count + 4) * 2;
+      //   one.textContent = count;
+      // };
+    </script>
+  </body>
+</html>

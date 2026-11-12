@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello Bulma!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Hello if/else</h1>
+      </div>
+    </section>
+    <script>
+      // #1 : Score
+      //   let score = Number(prompt("dungee oruul"));
+
+      //   if (score > 100) {
+      //     console.log("dung buruu oruulsan bn");
+      //   } else if (score >= 90) {
+      //     console.log("A");
+      //   } else if (score >= 80) {
+      //     console.log("B");
+      //   } else if (score >= 70) {
+      //     console.log("C");
+      //   } else if (score >= 60) {
+      //     console.log("D");
+      //   } else if (score >= 50) {
+      //     console.log("E");
+      //   } else {
+      //     console.log("F");
+      //   }
+
+      //   #2 : ODD, EVEN
+      //   let num = Number(prompt("too oruulna u!"));
+      //   let hariu = num % 2;
+
+      //   if (hariu == 0) {
+      //     alert("tegsh");
+      //   } else {
+      //     alert("sondgoi");
+      //   }
+
+      //   #3 : Password
+      //   let password = Number(prompt("4 orontoi oruulna uu! \npassword: "));
+      //   let success = 1234;
+
+      //   if (password == success) {
+      //     alert("success enter");
+      //   } else {
+      //     alert("wrong password, try again!");
+      //   }
+      // #4 : Leap Year
+      const year = Number(prompt("on oruul"));
+
+      if (year % 400 == 0) {
+        alert(year + " is Leap Year");
+      } else if (year % 100 == 0) {
+        alert(year + " is not Lear Year");
+      } else if (year % 4 == 0) {
+        alert(year + " is Leap Year");
+      } else {
+        alert(year + " is not Leap Year");
+      }
+    </script>
+  </body>
+</html>

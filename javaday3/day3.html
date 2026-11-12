@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello Bulma!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="section">
+      <h1 id="title" class="title">Student Card</h1>
+      <div id="main" class="main">
+        <div>
+          <p>Name</p>
+          <input id="name" class="input" type="text" placeholder="your-name" />
+        </div>
+        <div>
+          <p>Email</p>
+          <input
+            id="email"
+            class="input"
+            type="email"
+            placeholder="@gmail.com"
+          />
+        </div>
+        <div>
+          <p>Age</p>
+          <input id="age" class="input" type="date" placeholder="your-age" />
+        </div>
+        <div>
+          <p>Class</p>
+          <input id="angi" class="input" type="text" placeholder="your-class" />
+        </div>
+        <button onclick="studentCard()" class="button is-success">press</button>
+      </div>
+      <div class="lower">
+        <h1>Name: <span id="Name"></span></h1>
+        <h1>Email: <span id="Email"></span></h1>
+        <h1>Age: <span id="Age"></span></h1>
+        <h1>Class: <span id="Angi"></span></h1>
+      </div>
+    </section>
+    <script>
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const age = document.getElementById("age");
+      const angi = document.getElementById("angi");
+      const Name = document.getElementById("Name");
+      const Email = document.getElementById("Email");
+      const Age = document.getElementById("Age");
+      const Angi = document.getElementById("Angi");
+      const main = document.getElementById("main");
+
+      const studentCard = () => {
+        Name.textContent = name.value;
+        Email.textContent = email.value;
+        Age.textContent = age.value;
+        Angi.textContent = angi.value;
+        main.classList.add("hooson");
+      };
+    </script>
+  </body>
+</html>

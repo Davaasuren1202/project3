@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.main {
+  border-bottom: 1px solid #4d43544d;
+}
+.lower {
+  padding: 20px 10px;
+  border-bottom: 1px solid #4d43544d;
+  box-shadow: 0px 0px 20px 0px #ddb7ff33;
+}
+.input {
+  width: 400px;
+}
+.button {
+  margin: 20px 0;
+}
+.hooson {
+  display: none;
+}
