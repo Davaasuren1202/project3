@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search History</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Search History</h2>
+        <span>🔍</span>
+      </div>
+
+      <p class="subtitle">Хайлтын систем</p>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Хайх зүйлээ бичнэ үү..."
+        />
+
+        <button class="search-btn" onclick="search()">Search</button>
+      </div>
+
+      <div class="history-title">
+        <h3>Recent Searches</h3>
+        <span class="badge" id="count">0 searches</span>
+      </div>
+
+      <ul id="history"></ul>
+
+      <button class="clear-btn" onclick="clearHistory()">
+        🗑 Clear History
+      </button>
+    </div>
+
+    <script>
+      let searchHistory = [];
+
+      function search() {
+        let input = document.getElementById("searchInput");
+        let value = input.value.trim();
+
+        if (value === "") {
+          return;
+        }
+
+        searchHistory.push(value);
+
+        showHistory();
+
+        input.value = "";
+      }
+
+      function showHistory() {
+        let history = document.getElementById("history");
+
+        history.innerHTML = "";
+
+        for (let i = 0; i < searchHistory.length; i++) {
+          let li = document.createElement("li");
+
+          li.className = "history-item";
+
+          li.textContent = "🕒 " + searchHistory[i];
+
+          history.appendChild(li);
+
+          //   if (i === searchHistory.length - 1) {
+          //     history.classList.add("container");
+          //   }
+        }
+
+        document.getElementById("count").textContent =
+          searchHistory.length + " searches";
+      }
+
+      function clearHistory() {
+        let history = document.getElementById("history");
+
+        if (searchHistory.length === 0) {
+          return;
+        }
+
+        history.classList.add("clearing");
+
+        history.addEventListener(
+          "animationend",
+          function () {
+            searchHistory = [];
+
+            history.innerHTML = "";
+
+            history.classList.remove("clearing");
+
+            document.getElementById("count").textContent = "0 searches";
+          },
+          { once: true },
+        );
+      }
+    </script>
+  </body>
+</html>
