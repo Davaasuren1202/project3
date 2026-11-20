@@ -16,19 +16,30 @@
         </button>
       </div>
       <div id="container"></div>
+      <button id="clear" onclick="clearAll()">Clear All</button>
     </section>
     <script>
-      const todos = [];
+      let todos = [];
 
-      const input = document.getElementById("input");
+      let input = document.getElementById("input");
       const container = document.getElementById("container");
+      const clear = document.getElementById("clear");
 
       const addTodo = () => {
         todos.push(input.value);
+        if (input.value === "") {
+          todos = [];
+          return;
+        }
+        renderTodo();
+      };
+      const clearAll = () => {
+        todos = [];
         renderTodo();
       };
 
       const renderTodo = () => {
+        input.value = "";
         container.textContent = "";
 
         for (i = 0; i < todos.length; i++) {
