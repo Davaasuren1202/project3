@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 id="addCount">1</h1>
-    <button onclick="stopCount()">purple</button>
+    <h1 id="addCount">0</h1>
+    <button onclick="stopCount()">stop</button>
     <div id="bckgrnd" style="width: 200px; height: 200px" class="green"></div>
-    <button onclick="startBtn()">blue</button>
+    <button onclick="startBtn()">start</button>
     <button onclick="green()">green</button>
     <script>
-      //   const addNum = document.getElementById("addCount");
+      const addNum = document.getElementById("addCount");
       //   let count = 0;
 
       //   const addCount = () => {
@@ -26,29 +26,6 @@
       //     clearInterval(id);
       //   }, 10000);
 
-      let backGround = document.getElementById("bckgrnd");
-      let ungu = "green";
-      let startBtn = () => {
-        setTimeout(() => {
-          backGround.classList.add("blue");
-          backGround.classList.remove("green");
-          backGround.classList.remove("purple");
-        }, 1000);
-      };
-      let stopCount = () => {
-        setTimeout(() => {
-          backGround.classList.add("purple");
-          backGround.classList.remove("blue");
-          backGround.classList.remove("green");
-        }, 1000);
-      };
-      let green = () => {
-        setTimeout(() => {
-          backGround.classList.add("green");
-          backGround.classList.remove("purple");
-          backGround.classList.remove("blue");
-        }, 1000);
-      };
       //   const startBtn = () => {
       //     setInterval(() => {
       //       count++;
@@ -71,6 +48,135 @@
       //   };
 
       //   setTimeout(alertTimeOut, 3000);
+
+      //   let backGround = document.getElementById("bckgrnd");
+      //   let ungu = "green";
+      //   let startBtn = () => {
+      //     setTimeout(() => {
+      //       backGround.classList.add("blue");
+      //       backGround.classList.remove("green");
+      //       backGround.classList.remove("purple");
+      //     }, 1000);
+      //   };
+      //   let stopCount = () => {
+      //     setTimeout(() => {
+      //       backGround.classList.add("purple");
+      //       backGround.classList.remove("blue");
+      //       backGround.classList.remove("green");
+      //     }, 1000);
+      //   };
+      //   let green = () => {
+      //     setTimeout(() => {
+      //       backGround.classList.add("green");
+      //       backGround.classList.remove("purple");
+      //       backGround.classList.remove("blue");
+      //     }, 1000);
+      //   };
+
+      //   const now = new Date();
+
+      //   let hours = String(now.getHours()).padStart(2, "0");
+      //   let minutes = String(now.getMinutes()).padStart(2, "0");
+      //   let seconds = String(now.getSeconds()).padStart(2, "0");
+      //   //   let milliseconds = String(now.getMilliseconds()).padStart(3, "0");
+
+      //   setInterval(() => {
+      //     const now = new Date();
+
+      //     hours = String(now.getHours()).padStart(2, "0");
+      //     minutes = String(now.getMinutes()).padStart(2, "0");
+      //     seconds = String(now.getSeconds()).padStart(2, "0");
+      //     // milliseconds = String(now.getMilliseconds()).padStart(3, "0");
+
+      //     addNum.textContent = `${hours}:${minutes}:${seconds}`;
+      //   }, 1000);
+
+      // let hours = 0;
+      // let minutes = 0;
+      // let seconds = 0;
+      // let days = 0;
+      // let getNum = Number(prompt("second oruulna : "))
+
+      //   let countDown = () => {
+      //     seconds = getNum % 60;
+      //     minute = (getNum - seconds) / 60;
+      //     minutes = minute % 60;
+      //     hour = (minute - (minute % 60)) / 60;
+      //     hours = hour % 24;
+      //     days = (hour - (hour % 24)) / 24;
+      //     getNum--;
+      //     hours = String(hours).padStart(2, "0");
+      //     minutes = String(minutes).padStart(2, "0");
+      //     seconds = String(seconds).padStart(2, "0");
+      //     addNum.textContent =
+      //       days + " DAY" + " " + hours + " : " + minutes + " : " + seconds;
+      //     stop();
+      //   };
+      //   let interval = setInterval(countDown, 1000);
+
+      //   const stop = () => {
+      //     if (getNum < 0) {
+      //       clearInterval(interval);
+      //     }
+      //   };
+
+      let hours = 0;
+      let minutes = 0;
+      let seconds = 0;
+      let days = 0;
+      let getSeconds = Number(prompt("second oruul: "));
+      let getMinutes = Number(prompt("minute oruul: "));
+      let getHours = Number(prompt("tsag oruul: "));
+
+      let countDown = () => {
+        // seconds = getNum % 60;
+        // minute = (getNum - seconds) / 60;
+        // minutes = minute % 60;
+        // hour = (minute - (minute % 60)) / 60;
+        // hours = hour % 24;
+        // days = (hour - (hour % 24)) / 24;
+
+        if (getHours > 24) {
+          hours = getHours % 24;
+          days = days + (getHours - hours) / 24;
+        } else {
+          hours = getHours;
+        }
+
+        if (getMinutes > 60) {
+          minutes = getMinutes % 60;
+          hours = hours + (getMinutes - minutes) / 60;
+        } else {
+          minutes = getMinutes;
+        }
+
+        if (getSeconds > 60) {
+          seconds = getSeconds % 60;
+          minutes = minutes + (getSeconds - seconds) / 60;
+        } else {
+          seconds = getSeconds;
+        }
+        hours = String(hours).padStart(2, "0");
+        minutes = String(minutes).padStart(2, "0");
+        seconds = String(seconds).padStart(2, "0");
+        addNum.textContent =
+          days + " DAY" + " " + hours + " : " + minutes + " : " + seconds;
+        stop();
+      };
+      countDown();
+      let interval = setInterval(countDown, 1000);
+
+      const stop = () => {
+        if (getSeconds < 0) {
+          clearInterval(interval);
+        }
+      };
+
+      //   countDown();
+
+      //   seconds=60max ===1min
+      //   getnum%60= 40 ==seconds 60 == 1min
+      //   getnum/60 = min
     </script>
   </body>
 </html>
