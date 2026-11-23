@@ -1,0 +1,29 @@
+section {
+  width: 600px;
+  margin: 90px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+button {
+  width: 24%;
+  height: 120px;
+  border: 0;
+  font-size: 28px;
+}
+#display {
+  border-radius: 1px solid black;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 48px;
+}
+.rows {
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.clearAll {
+  display: none;
+}

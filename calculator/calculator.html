@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <div id="display"></div>
+      <div class="rows">
+        <button onclick="remove()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-delete preview-icon"
+          >
+            <path
+              d="M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"
+            />
+            <path d="m12 9 6 6" />
+            <path d="m18 9-6 6" />
+          </svg>
+        </button>
+        <button onclick="clearAll()">AC</button>
+        <button onclick="percent('%')">%</button>
+        <button onclick="divide('/')">/</button>
+      </div>
+      <div class="rows">
+        <button onclick="add(7)">7</button>
+        <button onclick="add(8)">8</button>
+        <button onclick="add(9)">9</button>
+        <button onclick="multiply('x')">x</button>
+      </div>
+      <div class="rows">
+        <button onclick="add(4)">4</button>
+        <button onclick="add(5)">5</button>
+        <button onclick="add(6)">6</button>
+        <button onclick="minus('-')">-</button>
+      </div>
+      <div class="rows">
+        <button onclick="add(1)">1</button>
+        <button onclick="add(2)">2</button>
+        <button onclick="add(3)">3</button>
+        <button onclick="plus('+')">+</button>
+      </div>
+      <div class="rows">
+        <button onclick="add('')">(-)</button>
+        <button onclick="add(0)">0</button>
+        <button onclick="add('.')">.</button>
+        <button onclick="equal()">=</button>
+      </div>
+    </section>
+    <script src="calculator.js"></script>
+  </body>
+</html>

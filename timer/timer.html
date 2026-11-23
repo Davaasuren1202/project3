@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="addCount">1</h1>
+    <button onclick="stopCount()">purple</button>
+    <div id="bckgrnd" style="width: 200px; height: 200px" class="green"></div>
+    <button onclick="startBtn()">blue</button>
+    <button onclick="green()">green</button>
+    <script>
+      //   const addNum = document.getElementById("addCount");
+      //   let count = 0;
+
+      //   const addCount = () => {
+      //     count++;
+      //     addNum.textContent = count;
+      //   };
+      //   const id = setInterval(addCount, 1000);
+
+      //   setTimeout(() => {
+      //     clearInterval(id);
+      //   }, 10000);
+
+      let backGround = document.getElementById("bckgrnd");
+      let ungu = "green";
+      let startBtn = () => {
+        setTimeout(() => {
+          backGround.classList.add("blue");
+          backGround.classList.remove("green");
+          backGround.classList.remove("purple");
+        }, 1000);
+      };
+      let stopCount = () => {
+        setTimeout(() => {
+          backGround.classList.add("purple");
+          backGround.classList.remove("blue");
+          backGround.classList.remove("green");
+        }, 1000);
+      };
+      let green = () => {
+        setTimeout(() => {
+          backGround.classList.add("green");
+          backGround.classList.remove("purple");
+          backGround.classList.remove("blue");
+        }, 1000);
+      };
+      //   const startBtn = () => {
+      //     setInterval(() => {
+      //       count++;
+      //       addNum.textContent = count;
+      //     }, 500);
+      //   };
+      //   if (addNum === 3) {
+      //     const alert = () => {
+      //       count++;
+      //       addNum.textContent = count;
+      //     };
+
+      //     const interval = setInterval(alert, 1000);
+
+      //     alert("Time Out !!!");
+      //     clearInterval(interval);
+      //   }
+      //   const alertTimeOut = () => {
+      //     alert("time out!!");
+      //   };
+
+      //   setTimeout(alertTimeOut, 3000);
+    </script>
+  </body>
+</html>

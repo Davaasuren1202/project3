@@ -26,11 +26,10 @@
       const clear = document.getElementById("clear");
 
       const addTodo = () => {
-        todos.push(input.value);
         if (input.value === "") {
-          todos = [];
           return;
         }
+        todos.push(input.value);
         renderTodo();
       };
       const clearAll = () => {
