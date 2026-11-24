@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const me = { name: "Davaasuren", age: 23, city: "Ulaanbaatar" };
+      me.age = 24;
+      const text =
+        me.name.length >= 6 ? "5-s deesh usegtei" : "6s doosh usegte ner";
+
+      console.log(text);
+      console.log(me);
+      const students = [
+        { name: "Бат", score: 85 },
+        { name: "Сараа", score: 92 },
+        { name: "Дорж", score: 45 },
+      ];
+      for (let i = 0; i < students.length; i++) {
+        const s = students[i];
+        const result = s.score >= 60 ? "Тэнцсэн" : "Унасан";
+        console.log(s.name + ": " + result);
+      }
+      const product = {
+        name: "Утас",
+        price: 1200000,
+        stock: 0,
+      };
+      const ware = product.stock > 0 ? "Baigaa" : "Duussan";
+      console.log(product.name + " : " + ware);
+      const student = [
+        { name: "Бат", score: 85 },
+        { name: "Сараа", score: 92 },
+        { name: "Дорж", score: 45 },
+        { name: "Номин", score: 58 },
+      ];
+
+      for (i = 0; i < student.length; i++) {
+        const hariu = student[i].score >= 60 ? "Tentssen" : "Unasan";
+        console.log(student[i].name + " : " + hariu);
+      }
+      let getScore = student[0].score;
+      for (i = 0; i < student.length; i++) {
+        const highScore =
+          student[i].score >= getScore ? student[i].score : getScore;
+        getScore = highScore;
+      }
+      console.log(getScore);
+
+      const cart = [
+        { name: "Ном", price: 15000, qty: 2 },
+        { name: "Үзэг", price: 2000, qty: 5 },
+        { name: "Цүнх", price: 35000, qty: 1 },
+      ];
+      let totalPrice = 0;
+      let deliver = "";
+
+      for (i = 0; i < cart.length; i++) {
+        let une = cart[i].price * cart[i].qty;
+        totalPrice += une;
+        deliver = totalPrice >= 50000 ? "free delivery" : "Delivery is 5k$";
+      }
+      console.log("Total : " + totalPrice + " ; " + deliver);
+    </script>
+  </body>
+</html>
