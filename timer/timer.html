@@ -7,12 +7,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 id="addCount">0</h1>
     <div><h1 id="world-time"></h1></div>
-    <button onclick="stopCount()">stop</button>
+    <input id="secInput" type="number" />
+    <h1 id="addCount">0 DAY 00 : 00 : 00</h1>
+    <button onclick="startTime()">start</button>
+    <button class="plustime" onclick="plusHalfSec()">+30 sec</button>
+    <button class="plustime" onclick="plusMin()">+ min</button>
+    <button class="plustime" onclick="plusFiveMin()">+5 min</button>
+    <!-- <button onclick="stopCount()">purple</button>
     <div id="bckgrnd" style="width: 200px; height: 200px" class="green"></div>
-    <button onclick="startBtn()">start</button>
-    <button onclick="green()">green</button>
+    <button onclick="startBtn()">blue</button>
+    <button onclick="green()">green</button> -->
     <script>
       const addNum = document.getElementById("addCount");
       const worldTime = document.getElementById("world-time");
@@ -27,7 +32,6 @@
       //   setTimeout(() => {
       //     clearInterval(id);
       //   }, 10000);
-      2;
       //   const startBtn = () => {
       //     setInterval(() => {
       //       count++;
@@ -51,54 +55,54 @@
 
       //   setTimeout(alertTimeOut, 3000);
 
-      let backGround = document.getElementById("bckgrnd");
-      let ungu = "green";
-      let startBtn = () => {
-        setTimeout(() => {
-          backGround.classList.add("blue");
-          backGround.classList.remove("green");
-          backGround.classList.remove("purple");
-        }, 1000);
-      };
-      let stopCount = () => {
-        setTimeout(() => {
-          backGround.classList.add("purple");
-          backGround.classList.remove("blue");
-          backGround.classList.remove("green");
-        }, 1000);
-      };
-      let green = () => {
-        setTimeout(() => {
-          backGround.classList.add("green");
-          backGround.classList.remove("purple");
-          backGround.classList.remove("blue");
-        }, 1000);
-      };
+      // let backGround = document.getElementById("bckgrnd");
+      // let ungu = "green";
+      // let startBtn = () => {
+      //   setTimeout(() => {
+      //     backGround.classList.add("blue");
+      //     backGround.classList.remove("green");
+      //     backGround.classList.remove("purple");
+      //   }, 1000);
+      // };
+      // let stopCount = () => {
+      //   setTimeout(() => {
+      //     backGround.classList.add("purple");
+      //     backGround.classList.remove("blue");
+      //     backGround.classList.remove("green");
+      //   }, 1000);
+      // };
+      // let green = () => {
+      //   setTimeout(() => {
+      //     backGround.classList.add("green");
+      //     backGround.classList.remove("purple");
+      //     backGround.classList.remove("blue");
+      //   }, 1000);
+      // };
 
-      const now = new Date();
+      // const now = new Date();
 
-      let worldHours = String(now.getHours()).padStart(2, "0");
-      let worldMinutes = String(now.getMinutes()).padStart(2, "0");
-      let worldSeconds = String(now.getSeconds()).padStart(2, "0");
-      //   let milliseconds = String(now.getMilliseconds()).padStart(3, "0");
+      // let worldHours = String(now.getHours()).padStart(2, "0");
+      // let worldMinutes = String(now.getMinutes()).padStart(2, "0");
+      // let worldSeconds = String(now.getSeconds()).padStart(2, "0");
+      // //   let milliseconds = String(now.getMilliseconds()).padStart(3, "0");
 
-      setInterval(() => {
-        const now = new Date();
+      // setInterval(() => {
+      //   const now = new Date();
 
-        worldHours = String(now.getHours()).padStart(2, "0");
-        worldMinutes = String(now.getMinutes()).padStart(2, "0");
-        worldSeconds = String(now.getSeconds()).padStart(2, "0");
-        // milliseconds = String(now.getMilliseconds()).padStart(3, "0");
+      //   worldHours = String(now.getHours()).padStart(2, "0");
+      //   worldMinutes = String(now.getMinutes()).padStart(2, "0");
+      //   worldSeconds = String(now.getSeconds()).padStart(2, "0");
+      //   // milliseconds = String(now.getMilliseconds()).padStart(3, "0");
 
-        worldTime.textContent = `${"World Time "}:${worldHours}:${worldMinutes}:${worldSeconds}`;
-      }, 1000);
+      //   worldTime.textContent = `${"World Time "}:${worldHours}:${worldMinutes}:${worldSeconds}`;
+      // }, 1000);
 
       let hours = 0;
       let minutes = 0;
       let seconds = 0;
       let days = 0;
-      let getTime = Number(prompt("min oruul : "));
-      let getNum = getTime * 60 * 60 * 24;
+      // let getTime = Number(prompt("min oruul : "));
+      let getNum = document.getElementById("secInput").value;
 
       const countDown = () => {
         seconds = getNum % 60;
@@ -120,11 +124,21 @@
 
       const stop = () => {
         if (getNum < 0) {
-          alert("timeout!!!");
+          // alert("timeout!!!");
           clearInterval(interval);
         }
       };
+      let startTime = () => {};
 
+      const plusHalfSec = () => {
+        getNum += 30;
+      };
+      const plusMin = () => {
+        getNum += 60;
+      };
+      const plusFiveMin = () => {
+        getNum += 60 * 5;
+      };
       // let hours = 0;
       // let minutes = 0;
       // let seconds = 0;
