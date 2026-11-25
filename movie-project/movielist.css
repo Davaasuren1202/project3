@@ -8,24 +8,32 @@ body {
   font-family: sans-serif;
 }
 .header {
-  color: rgb(255, 215, 83);
   border-bottom: 1px solid #4d43544d;
   box-shadow: 0px 0px 20px 0px #ddb7ff33;
   padding: 20px;
   margin-bottom: 40px;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    rgb(211, 252, 208),
+    rgb(68, 247, 55)
+  );
 }
 .movieList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   color: white;
-  gap: 10px;
   row-gap: 30px;
   padding: 20px;
   margin: auto;
 }
 .box {
   width: 19%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .box img {
   width: 100%;
@@ -44,12 +52,11 @@ body {
   box-shadow: inset 0px 20px 10px #000000;
 }
 .box h3 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
-  color: rgb(254, 247, 182);
+  color: rgb(195, 255, 191);
 }
 .box p {
   color: rgb(253, 253, 234);
-  font-family: serif;
   font-size: 16px;
 }
