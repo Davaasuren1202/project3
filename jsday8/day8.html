@@ -10,11 +10,17 @@
     <section>
       <h1>Todo List</h1>
       <div class="search">
-        <input type="text" placeholder="save your text...." id="input" />
+        <input
+          type="text"
+          placeholder="save your text...."
+          id="input"
+          class="input"
+        />
         <button id="button" class="button is-success" onclick="addTodo()">
-          Add
+          Save
         </button>
       </div>
+      <div id="save"></div>
       <div id="container"></div>
       <button id="clear" onclick="clearAll()">Clear All</button>
     </section>
@@ -24,6 +30,11 @@
       let input = document.getElementById("input");
       const container = document.getElementById("container");
       const clear = document.getElementById("clear");
+      const save = document.getElementById("save");
+      let archive = document.createElement("div");
+      archive.classList.add("archive");
+      let count = 0;
+      archive.textContent = `${count} archive`;
 
       const addTodo = () => {
         if (input.value === "") {
@@ -32,9 +43,11 @@
         todos.push(input.value);
         renderTodo();
       };
+
       const clearAll = () => {
         todos = [];
         renderTodo();
+        to();
       };
 
       const renderTodo = () => {
@@ -49,9 +62,17 @@
 
           if (i === todos.length - 1) {
             newDiv.classList.add("animate");
+            count++;
           }
         }
+        save.appendChild(archive);
+        archive.textContent = `${count} archive`;
       };
+      let to = () => {
+        count = 0;
+        archive.textContent = `${count} archive`;
+      };
+      save.appendChild(archive);
     </script>
   </body>
 </html>
