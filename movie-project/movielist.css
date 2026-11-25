@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(8, 6, 20);
+}
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: white;
+}
+.movies-box p {
+}
