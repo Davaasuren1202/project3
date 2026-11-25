@@ -4,13 +4,52 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(8, 6, 20);
+  background-color: rgb(10, 11, 21);
+  font-family: sans-serif;
+}
+.header {
+  color: rgb(255, 215, 83);
+  border-bottom: 1px solid #4d43544d;
+  box-shadow: 0px 0px 20px 0px #ddb7ff33;
+  padding: 20px;
+  margin-bottom: 40px;
 }
 .movieList {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-evenly;
   color: white;
+  gap: 10px;
+  row-gap: 30px;
+  padding: 20px;
+  margin: auto;
 }
-.movies-box p {
+.box {
+  width: 19%;
+}
+.box img {
+  width: 100%;
+  border-radius: 20px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  margin-bottom: 18px;
+  box-shadow: 0px 0px 10px 0px #ddb7ff33;
+}
+.box img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 4px 2px #bed1f4;
+}
+.box img:active {
+  transform: scale(1);
+  box-shadow: inset 0px 20px 10px #000000;
+}
+.box h3 {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgb(254, 247, 182);
+}
+.box p {
+  color: rgb(253, 253, 234);
+  font-family: serif;
+  font-size: 16px;
 }

@@ -11,8 +11,7 @@ const favouriteMovies = [
   {
     no: 2,
     title: "The Odysey",
-    imgUrl:
-      "https://media.themoviedb.org/t/p/w600_and_h900_face/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
+    imgUrl: "https://image.tmdb.org/t/p/w500/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
     rating: 8.4,
     year: "(2026)",
     director: "Christopher Nolan",
@@ -20,7 +19,7 @@ const favouriteMovies = [
   {
     no: 3,
     title: "Lucy",
-    imgUrl: "https://image.tmdb.org/t/p/w500/d0PibPzCK4fVikjoD1PqHovbvkt.jpg",
+    imgUrl: "https://image.tmdb.org/t/p/w500/kRbpUTRNm6QbLQFPFWUcNC4czEm.jpg",
     rating: 6.4,
     year: 2014,
     director: "Luc Besson",
@@ -85,6 +84,7 @@ const favouriteMovies = [
 
 favouriteMovies.map((movies) => {
   const box = document.createElement("div");
+  box.classList.add("box");
   const img = document.createElement("img");
   img.src = movies.imgUrl;
   const title = document.createElement("h3");
@@ -94,13 +94,13 @@ favouriteMovies.map((movies) => {
   const director = document.createElement("p");
   director.textContent = `Director: ${movies.director}`;
   const year = document.createElement("p");
-  year.textContent = `Release year: ${movies.year}`;
+  year.textContent = `ReleaseDate: ${movies.year}`;
 
   box.appendChild(img);
   box.appendChild(title);
   box.appendChild(rating);
-  box.appendChild(director);
   box.appendChild(year);
+  box.appendChild(director);
 
   movieList.appendChild(box);
 });
